@@ -1,15 +1,15 @@
 var apiKey = require('./../.env').apikey;
 
-function Repo(){
+User = function() {
 }
 
-Repo.prototype.getRepo = function(gitname) {
-  $.get('http://api.github,com/users/' + gitname + '?access_token=' + 'apiKey').then(function(response) {
-    console.log(response);
+User.prototype.getUser = function(gitname, displayFunction) {
+  $.get('http://api.github,com/users/' + gitname + '?access_token=' + apiKey).then(function(response) {
+    displayFunction(gitname, response.main.gitname);
   }).fail(function(error){
-    console.log(error.responseJSON.message);
+    $('#showUser').text(error.responseJSON.message);
   });
 };
 
 
-exports.repoModule = Repo;
+exports.userModule = User;

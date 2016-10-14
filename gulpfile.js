@@ -56,7 +56,7 @@ gulp.task('jsBower', function () {
     .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('cssBower', function () {
+gulp.task('cssBowers', function () {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));
