@@ -8,6 +8,7 @@ var displayGitUser = function(gitName) {
 
 $(document).ready(function() {
   var repoObject = new Repo();
+  $('#submit').click(function(event)
   var gitName = $('#gitName').val();
   $('#gitName').val("");
   repoObject.getRepo(gitName, displayGitUser);
