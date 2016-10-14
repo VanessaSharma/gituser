@@ -7,6 +7,7 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
+
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
@@ -18,6 +19,7 @@ var lib = require('bower-files')({
     }
   }
 });
+
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
@@ -47,20 +49,20 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
     .pipe(gulp.dest("./build/js"));
 });
 
-gulp.task('bowerJS', function () {
+gulp.task('jsBower', function () {
   return gulp.src(lib.ext('js').files)
     .pipe(concat('vendor.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('bowerCSS', function () {
+gulp.task('cssBower', function () {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('bower', ['bowerJS', 'bowerCSS']);
+gulp.task('bower', ['jsBower', 'cssBowers']);
 
 gulp.task("clean", function(){
   return del(['build', 'tmp']);
