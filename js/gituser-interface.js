@@ -1,23 +1,11 @@
-var User = require('../js/gituser.js').userModule;
+var Repo = require('../js/gituser.js').Repo;
 
 $(document).ready(function() {
-  var newUser = new User();
-  $('#userGitname').click(function() {
+  var newUser = new Repo();
+  $('#submit').click(function() {
     var gitname = $('#gitname').val();
     $('#gitname').val("");
-    newUser.getUser(gitname);
+    newUser.getRepo(gitname);
+    newUser.getAllRepo(gitname, repos_url)
   });
 });
-// var displayGitUser = function(gitName) {
-//   $('#showRepo').text("This is " + gitName + " repositories.");
-// };
-//
-//
-// $(document).ready(function() {
-//   var repoObject = new Repo();
-//   $('#submit').click(function(event)
-//   var gitName = $('#gitName').val();
-//   $('#gitName').val("");
-//   repoObject.getRepo(gitName, displayGitUser);
-//   });
-// });
