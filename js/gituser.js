@@ -1,10 +1,10 @@
-var apiKey = require('./../.env').apikey;
+var apiKey = require('./../.env').apiKey;
 
-User = function() {
-}
+exports.Repo = function() {
+};
 
-User.prototype.getUser = function(gitname, displayFunction) {
-  $.get('http://api.github,com/users/' + gitname + '?access_token=' + apiKey).then(function(response) {
+exports.Repo.prototype.getUser = function(gitname) {
+  $.get('http://api.github.com/users/' + gitname + '?access_token=' + apiKey).then(function(response) {
     displayFunction(gitname, response.main.gitname);
   }).fail(function(error){
     $('#showUser').text(error.responseJSON.message);
@@ -12,4 +12,3 @@ User.prototype.getUser = function(gitname, displayFunction) {
 };
 
 
-exports.userModule = User;
