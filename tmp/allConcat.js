@@ -5,7 +5,9 @@ $(document).ready(function() {
   $('#submit').click(function() {
     var gitname = $('#gitname').val();
     $('#gitname').val("");
+    $('.showRepo').empty();
+    $('.showAllRepo').empty();
     newUser.getRepo(gitname);
-    newUser.getAllRepo(gitname, repos_url)
+    newUser.getAllRepo(gitname);
   });
 });

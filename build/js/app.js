@@ -21,7 +21,7 @@ exports.Repo.prototype.getRepo = function(gitname) {
 exports.Repo.prototype.getAllRepo = function(gitname) {
   $.get('https://api.github.com/users/'+ gitname + '/repos').then(function(repos_url) {
     for(var i = 0; i<repos_url.length; i++) {
-      $('#showAllRepo').append('<li>' + repos_url[1].name + '</li>');
+      $('#showAllRepo').append('<li>' + repos_url[i].name + '</li>');
     }
     }).fail(function(error){
       $('.showAllRepo').text(error.responseJSON.message);
@@ -36,8 +36,10 @@ $(document).ready(function() {
   $('#submit').click(function() {
     var gitname = $('#gitname').val();
     $('#gitname').val("");
+    $('.showRepo').empty();
+    $('.showAllRepo').empty();
     newUser.getRepo(gitname);
-    newUser.getAllRepo(gitname, repos_url)
+    newUser.getAllRepo(gitname);
   });
 });
 
