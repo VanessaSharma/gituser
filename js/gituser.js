@@ -1,7 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 
 
-
 exports.Repo = function() {
 };
 
@@ -19,7 +18,7 @@ exports.Repo.prototype.getAllRepo = function(gitname) {
     for(var i = 0; i<repos_url.length; i++) {
       $('.showAllRepo').append('<li>' + repos_url[i].name + '</li>');
     }
-    }).fail(function(error){
-      $('.showAllRepo').text(error.responseJSON.message);
-    });
-  };
+  }).fail(function(error){
+    $('.showAllRepo').text(error.responseJSON.message);
+  });
+};
