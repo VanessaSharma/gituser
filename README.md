@@ -9,6 +9,8 @@ Search for GitHub User repositories by entering their username.
 
 * In command prompt enter: git clone https://github.com/VanessaSharma/gituser
 * In command prompt enter: cd gituser
+* Create an .env file in your project directory to include your key. Put this in your env file with your actual api-key:
+  exports.apiKey = "your-github-api-key";
 * In command prompt enter: npm init 
 * In command prompt enter: npm install
 * In command prompt enter: bower install
