@@ -1,6 +1,9 @@
 # GitHub User Search
 ------
 
+![screenshot of project running](screenshot.jpg)
+
+
 Search for GitHub User repositories by entering their username.
 <br/>
 
