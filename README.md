@@ -7,8 +7,18 @@
 Search for GitHub User repositories by entering their username.
 <br/>
 
-### Setup/Installation Instructions
+##Setup/Installation Instructions
 ------
+
+####Creating Personal Access Tokens
+
+* Login to your github account and go to setting
+* Select Personal Access Tokens from the sidebar, and hit Generate New Token
+* Select Generate Token with no options checked to receive a unique access token.
+* Place your access token in an .env file at the top level of your directory.
+* You must name your API key variable exports.apiKey in your .env file and store it in the root of the project directory
+
+`exports.apiKey="YOUR-ACCESS-TOKEN";`
 
 * In command prompt enter: git clone https://github.com/VanessaSharma/gituser
 * In command prompt enter: cd gituser
